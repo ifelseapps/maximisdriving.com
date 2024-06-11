@@ -1,0 +1,27 @@
+@import 'mixins';
+
+.posts-list {
+  margin: 0.9em 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-item {
+  display: flex;
+  gap: 0.6em;
+  &:not(:last-child) {
+    margin-bottom: 0.8em;
+  }
+}
+
+.post-date {
+  color: #757575;
+}
+
+.post-detail__date {
+  margin-bottom: 0.2em;
+}
+
+.post-detail__author {
+  margin-top: 2em;
+}

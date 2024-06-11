@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ "/css/common.css" }}" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://maximisdriving.com/rss.xml">
+
+    {% block custom_head %}
+    {% endblock %}
+    <title>{{ title }} — Максим рулит, автопутешествия по России</title>
+
+    <meta property="og:site_name" content="Максим рулит — автопутешествия по России"/>
+    <meta property="og:title" content="{{ title }} — Максим рулит, автопутешествия по России">
+
+    {% if description %}
+      <meta name="description" content="{{ description }}">
+      <meta property="og:description" content="{{ description }}"/>
+    {% endif %}
+
+    {% if keywords %}
+      <meta name="keywords" content="{{ keywords }}">
+    {% endif %}
+
+    <meta property="og:url" content="https://maximisdriving.com{{ page.url }}"/>
+
+    <meta property="og:image" content="https://v1.screenshot.11ty.dev/{{ 'https://maximisdriving.com' | urlencode }}{{ page.url | urlencode }}/opengraph/"/>
+    <meta property="og:image:width" content="1200"/>
+  </head>
+  <body>
+    <div class="page">
+      <div>
+        <header>
+          Header
+        </header>
+        <main class="container page__content">
+          {% block content %}
+            {% if page.url !== '/' %}
+              <h1>{{ title }}</h1>
+            {% endif %}
+            {{ content | safe }}
+          {% endblock content %}
+        </main>
+      </div>
+      <footer class="footer container page__footer">
+        Footer
+        <p class="footer__copyright">&copy;&nbsp;2024+ Максим Павлов</p>
+      </footer>
+    </div>
+  </body>
+</html>

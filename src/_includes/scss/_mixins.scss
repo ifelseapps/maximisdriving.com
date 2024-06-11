@@ -1,0 +1,20 @@
+@use 'sass:map';
+
+$breakpoints: (
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+);
+
+@mixin media($bp) {
+  @media screen and (min-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin touch {
+  @media (pointer: coarse) {
+    @content;
+  }
+}
