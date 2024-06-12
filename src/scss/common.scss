@@ -128,7 +128,12 @@ p {
 }
 
 ul:not([class]) li::marker {
-  color: #00e676;
+  color: #e91e63;
+}
+
+ul li:not(:last-child),
+ol li:not(:last-child) {
+  margin-bottom: 0.8em;
 }
 
 ul ul {
