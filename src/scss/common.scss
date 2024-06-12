@@ -17,9 +17,6 @@ body {
   @include media(md) {
     font-size: 18px;
   }
-  @include media(lg) {
-    font-size: 20px;
-  }
 }
 
 .visually-hidden {
@@ -294,13 +291,13 @@ p:empty {
   padding: 0.4em 0.8em;
   text-decoration: none;
   border-radius: 5px;
-  background-color: #00e676;
+  background-color: #ff4081;
   color: #212121;
   transition:
     0.3s background-color,
     0.3s transform,
     0.3s box-shadow;
-  box-shadow: 0 0.2em 0 0 #00a856;
+  box-shadow: 0 0.2em 0 0 #880e4f;
   &:active {
     transform: translateY(0.2em);
     box-shadow: none;
@@ -310,6 +307,6 @@ p:empty {
     color: #000;
   }
   &:hover {
-    background-color: #00c853;
+    background-color: #e91e63;
   }
 }

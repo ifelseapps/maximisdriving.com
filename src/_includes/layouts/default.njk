@@ -36,8 +36,44 @@
   <body>
     <div class="page">
       <div>
-        <header>
-          Header
+        <header class="header">
+          <div class="container header__inner">
+            <a href="/" class="logo header__logo">
+              <img src="/assets/images/photo_small.jpg" alt="My photo" class="logo__photo">
+              <div class="logo__name">Максим рулит</div>
+              <div class="logo__desc">автопутешествия по России</div>
+            </a>
+            <nav class="menu header__menu">
+              {% if '/travels/' in page.url %}
+                <span>Поездки</span>
+              {% else %}
+                <a href="/travels/">Поездки</a>
+              {% endif %}
+
+              {% if '/routes/' in page.url %}
+                <span>Маршруты</span>
+              {% else %}
+                <a href="/routes/">Маршруты</a>
+              {% endif %}
+
+              {% if '/team/' in page.url %}
+                <span>Команда</span>
+              {% else %}
+                <a href="/team/">Команда</a>
+              {% endif %}
+
+              {% if '/helpful/' in page.url %}
+                <span>Полезное</span>
+              {% else %}
+                <a href="/helpful/">Полезное</a>
+              {% endif %}
+            </nav>
+            {% if not '/join/' in page.url %}
+              <div>
+                <a href="/join/" class="button">Поехать с нами!</a>
+              </div>
+            {% endif %}
+          </div>
         </header>
         <main class="container page__content">
           {% block content %}
@@ -49,8 +85,14 @@
         </main>
       </div>
       <footer class="footer container page__footer">
-        Footer
-        <p class="footer__copyright">&copy;&nbsp;2024+ Максим Павлов</p>
+        <div class="footer__inner">
+          <div class="menu">
+            <a href="https://www.youtube.com/@maximisdriving" target="_blank">Youtube</a>
+            <a href="https://t.me/maximisdriving" target="_blank">Telegram</a>
+            <a href="https://vk.com/maximisdriving" target="_blank">VK</a>
+          </div>
+          <p class="footer__copyright">&copy;&nbsp;2024+ Максим Павлов</p>
+        </div>
       </footer>
     </div>
   </body>
