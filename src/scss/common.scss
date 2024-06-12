@@ -31,16 +31,16 @@ body {
 }
 
 a {
-  color: #05c;
+  color: #e91e63;
   text-decoration: underline;
-  text-decoration-color: rgba(0, 85, 204, 0.15);
+  text-decoration-color: rgba(233, 30, 99, 0.15);
   text-decoration-thickness: 0.05em;
   text-underline-offset: 0.2em;
   transition:
     color 0.3s,
     text-decoration-color 0.3s;
   &:hover {
-    color: #c00;
+    color: #f50057;
     text-decoration-color: rgba(204, 0, 0, 0.35);
   }
 }
@@ -72,8 +72,8 @@ a {
   &:visited,
   &:visited:hover {
     &:not(.menu a):not(.button) {
-      color: #b85ecf;
-      text-decoration-color: #b85ecf66;
+      color: #9c27b0;
+      text-decoration-color: #ba68c8;
     }
   }
 }
@@ -200,7 +200,7 @@ td {
 }
 
 mark {
-  background-color: #ffecb3;
+  background-color: #fce4ec;
 }
 
 .note {
