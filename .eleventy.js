@@ -57,6 +57,14 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
+  config.addCollection('daytrips', (api) => {
+    return api.getFilteredByGlob('src/routes/daytrips/*.md')
+  })
+
+  config.addCollection('multiday', (api) => {
+    return api.getFilteredByGlob('src/routes/multiday/*.md')
+  })
+
   config.addFilter('monthAndYear', (value) => {
     return format(value || new Date(), 'LLLL yyyy', {
       locale: ru,

@@ -1,0 +1,17 @@
+@import 'mixins';
+
+.routes-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  @include media(lg) {
+    flex-direction: row;
+  }
+}
+
+.routes-page__column {
+  @include media(lg) {
+    flex: none;
+    width: 50%;
+  }
+}
