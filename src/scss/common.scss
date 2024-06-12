@@ -1,6 +1,7 @@
 @import 'mixins';
 @import 'fonts';
 @import 'layout';
+@import 'main';
 @import 'posts';
 
 html,
@@ -47,7 +48,7 @@ a {
 .page__content a {
   &[href^='http'],
   &[href^='https'] {
-    &:not(.button) {
+    &:not(.button):not(.socials__item) {
       transition:
         background-color 0.3s,
         text-decoration-color 0.3s;
@@ -122,7 +123,7 @@ p {
   margin: 0;
   &:not([class]) {
     margin: 1em 0;
-    line-height: 1.4em;
+    line-height: 1.6em;
   }
 }
 
@@ -309,4 +310,9 @@ p:empty {
   &:hover {
     background-color: #e91e63;
   }
+}
+
+.text-important {
+  font-size: 1.4em;
+  line-height: 1.4em;
 }

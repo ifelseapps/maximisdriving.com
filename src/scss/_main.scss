@@ -1,0 +1,53 @@
+@import 'mixins';
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.main-about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  @include media(lg) {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}
+
+.main-about-section__photo {
+  @include media(lg) {
+    flex: none;
+    width: 45%;
+  }
+}
+
+.main-about-section__info {
+  @include media(lg) {
+    padding-bottom: 1em;
+  }
+}
+
+.main-join-section {
+  text-align: center;
+}
+
+.main-socials-section {
+  text-align: center;
+}
+
+.socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.socials__icon {
+  width: 32px;
+  height: 32px;
+}
+
+.main-thanks-section {
+  text-align: center;
+}
