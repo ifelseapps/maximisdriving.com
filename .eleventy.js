@@ -8,6 +8,7 @@ const embedEverything = require('eleventy-plugin-embed-everything')
 const pluginRss = require('@11ty/eleventy-plugin-rss')
 const Image = require('@11ty/eleventy-img')
 const { format } = require('date-fns')
+const ru = require('date-fns/locale/ru')
 
 /** @param {import("@11ty/eleventy").UserConfig} config */
 module.exports = (config) => {
@@ -56,8 +57,10 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
-  config.addFilter('dateAndMonth', (value) => {
-    return format(value || new Date(), 'dd.MM')
+  config.addFilter('monthAndYear', (value) => {
+    return format(value || new Date(), 'LLLL yyyy', {
+      locale: ru,
+    })
   })
 
   config.addFilter('date', (value) => {

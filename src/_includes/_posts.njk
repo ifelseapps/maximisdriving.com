@@ -5,7 +5,7 @@
     {% if fullDate %}
       <span class="post-date">{{ post.data.date | date }}</span>
     {% else %}
-      <span class="post-date">{{ post.data.date | dateAndMonth }}</span>
+      <span class="post-date">{{ post.data.date | monthAndYear }}</span>
     {% endif %}
     <a href="{{ post.url | url }}">{{ post.data.title }}</a>
   </li>

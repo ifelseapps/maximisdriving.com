@@ -44,29 +44,10 @@
               <div class="logo__desc">автопутешествия по России</div>
             </a>
             <nav class="menu header__menu">
-              {% if '/travels/' in page.url %}
-                <span>Поездки</span>
-              {% else %}
-                <a href="/travels/">Поездки</a>
-              {% endif %}
-
-              {% if '/routes/' in page.url %}
-                <span>Маршруты</span>
-              {% else %}
-                <a href="/routes/">Маршруты</a>
-              {% endif %}
-
-              {% if '/team/' in page.url %}
-                <span>Команда</span>
-              {% else %}
-                <a href="/team/">Команда</a>
-              {% endif %}
-
-              {% if '/helpful/' in page.url %}
-                <span>Полезное</span>
-              {% else %}
-                <a href="/helpful/">Полезное</a>
-              {% endif %}
+              <a class="menu__item{{ " menu__item_selected" if '/travels/' in page.url }}" href="/travels/">Поездки</a>
+              <a class="menu__item{{ " menu__item_selected" if '/routes/' in page.url }}" href="/routes/">Маршруты</a>
+              <a class="menu__item{{ " menu__item_selected" if '/team/' in page.url }}" href="/team/">Команда</a>
+              <a class="menu__item{{ " menu__item_selected" if '/helpful/' in page.url }}" href="/helpful/">Полезное</a>
             </nav>
             {% if not '/join/' in page.url %}
               <div>

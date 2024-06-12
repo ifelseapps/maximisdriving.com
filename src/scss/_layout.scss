@@ -69,6 +69,10 @@
   gap: 0.8em;
 }
 
+.menu__item_selected {
+  font-weight: 700;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
