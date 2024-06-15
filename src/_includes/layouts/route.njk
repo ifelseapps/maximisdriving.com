@@ -1,0 +1,34 @@
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+<h1 class="h h_lvl_1">{{ title }}</h1>
+<div class="properties">
+  <div class="properties__property">
+    <div class="properties__title">
+      <div class="properties__title-wrapper">Маршрут</div>
+    </div>
+    <div class="properties__value">{{ route }}</div>
+  </div>
+  <div class="properties__property">
+    <div class="properties__title">
+      <div class="properties__title-wrapper">Расстояние</div>
+    </div>
+    <div class="properties__value">{{ distance }}</div>
+  </div>
+  <div class="properties__property">
+    <div class="properties__title">
+      <div class="properties__title-wrapper">Дней в пути</div>
+    </div>
+    <div class="properties__value">{{ days }}</div>
+  </div>
+  <div class="properties__property">
+    <div class="properties__title">
+      <div class="properties__title-wrapper">Стоимость топлива</div>
+    </div>
+    <div class="properties__value">{{ fuel }}</div>
+  </div>
+</div>
+
+{{ content | safe }}
+
+{% endblock content %}

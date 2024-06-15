@@ -1,3 +1,4 @@
 {
-  "tags": ["route"]
+  "tags": ["route"],
+  "layout": "layouts/route.njk"
 }

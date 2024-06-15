@@ -1,26 +1,10 @@
 ---
 title: Южная Карелия
+route: Ярославль — Приозерск — Сортавала — Петрозаводск — Водопад «Кивач» — Медвежьегорск — Ярославль
+distance: 2 340 км
+days: 4
+fuel: 11 700 руб
 ---
-<div class="properties">
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Маршрут</div>
-    </div>
-    <div class="properties__value">Ярославль — Приозерск — Сортавала — Петрозаводск — Водопад «Кивач» — Медвежьегорск — Ярославль</div>
-  </div>
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Расстояние</div>
-    </div>
-    <div class="properties__value">2 340 км</div>
-  </div>
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Стоимость топлива</div>
-    </div>
-    <div class="properties__value">11 700 руб</div>
-  </div>
-</div>
 
 ## Маршрут
 В _Сортавалу_ из Ярославля можно попасть разными путями. Можно поехать через Москву, далее по платнику до Санкт-Петербурга. Можно поехать через Вытегру, далее — на Лодейное поле. Платники я не люблю — это дорого и скучно. Хотел сначала поехать через Вытегру и Лодейное поле, но поговорил с местными и узнал, что <mark>между Вытегрой и Лодейным полем есть отрезок, длиной примерно 100 км, который представляет из себя не то что гравийку, а грунтовку</mark>. И эту грунтовку постоянно размывает дождями.
