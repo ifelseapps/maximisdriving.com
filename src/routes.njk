@@ -5,17 +5,23 @@ title: Маршруты
 <div class="routes-page">
   <section class="routes-page__column">
     <h2 class="h h_lvl_3">Однодневные маршруты</h2>
-    <ul>
+    <ul class="routes-list">
       {% for route in collections.daytrips %}
-        <li><a href="{{ route.url | url }}">{{ route.data.title }}</a></li>
+        <li class="routes-item">
+          <a href="{{ route.url | url }}">{{ route.data.title }}</a>
+          <div class="routes-item__summary">{{ route.data.summary }}</div>
+        </li>
       {% endfor %}
     </ul>
   </section>
   <section class="routes-page__column">
     <h2 class="h h_lvl_3">Многодневные маршруты</h2>
-    <ul>
+    <ul class="routes-list">
       {% for route in collections.multiday %}
-        <li><a href="{{ route.url | url }}">{{ route.data.title }}</a></li>
+        <li class="routes-item">
+          <a href="{{ route.url | url }}">{{ route.data.title }}</a>
+          <div class="routes-item__summary">{{ route.data.summary }}</div>
+        </li>
       {% endfor %}
     </ul>
   </section>
