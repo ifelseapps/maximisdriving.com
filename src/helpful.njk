@@ -1,3 +1,21 @@
 ---
 title: Полезное
 ---
+
+<ol class="posts-list">
+  {% for post in collections.helpful %}
+  <li class="post-item">
+    <a class="post-item__link" href="{{ post.url | url }}">
+      <div class="post-item__top">
+        {% image_background post.data.cover, 'post-item__picture' %}
+        <div class="post-item__meta">
+          <span class="post-type post-type_route">Статья</span>
+        </div>
+      </div>
+      <div class="post-item__title">
+        {{ post.data.title }}
+      </div>
+  </a>
+  </li>
+  {% endfor %}
+</ol>

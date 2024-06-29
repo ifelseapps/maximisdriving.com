@@ -60,10 +60,6 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
-  config.addCollection('routes', (api) => {
-    return api.getFilteredByGlob('src/routes/*.md')
-  })
-
   config.addFilter('monthAndYear', (value) => {
     const date = format(value || new Date(), 'LLLL yyyy', {
       locale: ru,
