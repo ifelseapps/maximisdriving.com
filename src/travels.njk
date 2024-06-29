@@ -2,5 +2,25 @@
 title: Путешествия
 ---
 
-{% import "_posts.njk" as posts %}
-{{ posts.list(collections.travel) }}
+<ol class="posts-list">
+  {% for post in collections.travel %}
+  <li class="post-item">
+    <a class="post-item__link" href="{{ post.url | url }}">
+      <div class="post-item__top">
+        {% image_background post.data.cover, 'post-item__picture' %}
+        <div class="post-item__meta">
+          <span class="post-type post-type_travel">Поездка</span>
+          {% if post.data.date %}
+            <div class="post-item__date">
+              <span class="post-date">{{ post.data.date | monthAndYear }} г.</span>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="post-item__title">
+        {{ post.data.title }}
+      </div>
+  </a>
+  </li>
+  {% endfor %}
+</ol>

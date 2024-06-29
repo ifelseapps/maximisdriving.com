@@ -10,6 +10,9 @@ const Image = require('@11ty/eleventy-img')
 const { format } = require('date-fns')
 const ru = require('date-fns/locale/ru')
 
+const IMAGES_PATH = '/images/'
+const IMAGES_OUTPUT_PATH = './_site/images/'
+
 function handleRoute(route) {
   const summary = [
     `Расстояние: ${route.data.distance.replace(/\//g, '—')}`,
@@ -77,9 +80,11 @@ module.exports = (config) => {
   })
 
   config.addFilter('monthAndYear', (value) => {
-    return format(value || new Date(), 'LLLL yyyy', {
+    const date = format(value || new Date(), 'LLLL yyyy', {
       locale: ru,
     })
+
+    return date.charAt(0).toUpperCase() + date.slice(1)
   })
 
   config.addFilter('date', (value) => {
@@ -133,14 +138,28 @@ module.exports = (config) => {
     }</figure>`
   })
 
+  config.addShortcode('image_background', async (src, className = '') => {
+    const metadata = await Image(src, {
+      widths: [1400],
+      formats: ['webp'],
+      urlPath: IMAGES_PATH,
+      outputDir: IMAGES_OUTPUT_PATH,
+    })
+
+    const data = metadata.webp[metadata.webp.length - 1]
+    const cn = ['image-background', className].join(' ')
+
+    return `<div class="${cn}" style="background-image: url(${data.url})"></div>`
+  })
+
   config.addShortcode(
     'image',
     async (src, alt, sizes = '(min-width: 30em) 50vw, 100vw') => {
       const metadata = await Image(src, {
         widths: [320, 640, 960, 1200, 1800],
         formats: ['webp', 'jpeg'],
-        urlPath: '/images/',
-        outputDir: './_site/images/',
+        urlPath: IMAGES_PATH,
+        outputDir: IMAGES_OUTPUT_PATH,
       })
 
       const imageAttributes = {

@@ -3,6 +3,7 @@
 @import 'layout';
 @import 'main';
 @import 'routes';
+@import 'travels';
 @import 'posts';
 
 html,
@@ -46,7 +47,7 @@ a {
   }
 }
 
-.page__content a {
+.page__content a:not([class]) {
   &[href^='http'],
   &[href^='https'] {
     &:not(.button):not(.socials__item) {
@@ -325,4 +326,12 @@ p:empty {
 
 .text-done {
   color: #00c853;
+}
+
+.image-background {
+  display: flex;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
