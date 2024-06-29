@@ -25,7 +25,7 @@
 
 .header {
   padding: 1em 0;
-  background-color: #fce4ec;
+  background-color: #ffd600;
 }
 
 .header__inner {
@@ -43,6 +43,11 @@
   text-decoration: none;
   color: inherit;
   line-height: 1em;
+  color: #424242;
+
+  &:hover {
+    color: #424242;
+  }
 }
 
 .logo__photo {
@@ -61,7 +66,6 @@
 .logo__desc {
   font-style: italic;
   font-size: 0.9rem;
-  color: #424242;
 }
 
 .menu {
