@@ -4,6 +4,7 @@ route: Ярославль — Грозный / Ярославль — Махач
 distance: 2 160 км / 2 210 км (в один конец)
 days: 2 (в один конец)
 fuel: 11 000 руб (в один конец)
+cover: https://storage.yandexcloud.net/maximisdriving.com/routes/routes_chechnya.png
 ---
 
 ## Маршрут

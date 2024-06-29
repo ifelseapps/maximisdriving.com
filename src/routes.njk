@@ -2,27 +2,27 @@
 title: Маршруты
 ---
 
-<div class="routes-page">
-  <section class="routes-page__column">
-    <h2 class="h h_lvl_3">Однодневные маршруты</h2>
-    <ul class="routes-list">
-      {% for route in collections.daytrips %}
-        <li class="routes-item">
-          <a href="{{ route.url | url }}">{{ route.data.title }}</a>
-          <div class="routes-item__summary">{{ route.data.summary }}</div>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-  <section class="routes-page__column">
-    <h2 class="h h_lvl_3">Многодневные маршруты</h2>
-    <ul class="routes-list">
-      {% for route in collections.multiday %}
-        <li class="routes-item">
-          <a href="{{ route.url | url }}">{{ route.data.title }}</a>
-          <div class="routes-item__summary">{{ route.data.summary }}</div>
-        </li>
-      {% endfor %}
-    </ul>
-  </section>
-</div>
+<ol class="posts-list">
+  {% for post in collections.routes %}
+  <li class="post-item">
+    <a class="post-item__link" href="{{ post.url | url }}">
+      <div class="post-item__top">
+        {% image_background post.data.cover, 'post-item__picture' %}
+        <div class="post-item__meta">
+          <span class="post-type post-type_route">Маршрут</span>
+          <div class="post-item__additional">
+            {% if post.data.isoneday == true %}
+              <span class="post-additional">Однодневный маршрут</span>
+            {% else %}
+              <span class="post-additional">Многодневный маршрут</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="post-item__title">
+        {{ post.data.title }}
+      </div>
+  </a>
+  </li>
+  {% endfor %}
+</ol>

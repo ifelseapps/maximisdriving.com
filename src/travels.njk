@@ -11,8 +11,8 @@ title: Путешествия
         <div class="post-item__meta">
           <span class="post-type post-type_travel">Поездка</span>
           {% if post.data.date %}
-            <div class="post-item__date">
-              <span class="post-date">{{ post.data.date | monthAndYear }} г.</span>
+            <div class="post-item__additional">
+              <span class="post-additional">{{ post.data.date | monthAndYear }} г.</span>
             </div>
           {% endif %}
         </div>

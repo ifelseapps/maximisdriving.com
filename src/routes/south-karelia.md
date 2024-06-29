@@ -4,6 +4,7 @@ route: Ярославль — Приозерск — Сортавала — �
 distance: 2 340 км
 days: 4
 fuel: 11 700 руб
+cover: https://storage.yandexcloud.net/maximisdriving.com/routes/routes_south_karelia.png
 ---
 
 ## Маршрут

@@ -39,7 +39,7 @@
   align-items: flex-end;
 }
 
-.post-item__date {
+.post-item__additional {
   padding: 0.6em;
 }
 
@@ -73,7 +73,12 @@
   color: #424242;
 }
 
-.post-date {
+.post-type_route {
+  background-color: #7e57c2;
+  color: #fff;
+}
+
+.post-additional {
   padding: 0.4em 1em;
   border-radius: 20px;
   background-color: rgba(#000, 0.6);

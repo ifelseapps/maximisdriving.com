@@ -13,17 +13,6 @@ const ru = require('date-fns/locale/ru')
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
 
-function handleRoute(route) {
-  const summary = [
-    `Расстояние: ${route.data.distance.replace(/\//g, '—')}`,
-    `Стоимость топлива: ${route.data.fuel}`,
-  ].join(' / ')
-
-  route.data.summary = summary
-
-  return route
-}
-
 /** @param {import("@11ty/eleventy").UserConfig} config */
 module.exports = (config) => {
   const data = {
@@ -71,12 +60,8 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
-  config.addCollection('daytrips', (api) => {
-    return api.getFilteredByGlob('src/routes/daytrips/*.md').map(handleRoute)
-  })
-
-  config.addCollection('multiday', (api) => {
-    return api.getFilteredByGlob('src/routes/multiday/*.md').map(handleRoute)
+  config.addCollection('routes', (api) => {
+    return api.getFilteredByGlob('src/routes/*.md')
   })
 
   config.addFilter('monthAndYear', (value) => {
