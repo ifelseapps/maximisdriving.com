@@ -1,9 +1,9 @@
 ---
-title: Путешествия
+title: Поездки
 ---
 
 <ol class="posts-list">
-  {% for post in collections.travel %}
+  {% for post in collections.travel | reverse %}
   <li class="post-item">
     <a class="post-item__link" href="{{ post.url | url }}">
       <div class="post-item__top">
