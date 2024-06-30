@@ -4,25 +4,25 @@ title: Маршруты
 
 <ol class="posts-list">
   {% for post in collections.route %}
-  <li class="post-item">
-    <a class="post-item__link" href="{{ post.url | url }}">
-      <div class="post-item__top">
-        {% image_background post.data.cover, 'post-item__picture' %}
-        <div class="post-item__meta">
-          <span class="post-type post-type_route">Маршрут</span>
-          <div class="post-item__additional">
-            {% if post.data.isoneday == true %}
-              <span class="post-additional">Однодневный маршрут</span>
-            {% else %}
-              <span class="post-additional">Многодневный маршрут</span>
-            {% endif %}
+    <li class="post-item">
+      <a class="post-item__link" href="{{ post.url | url }}">
+        <div class="post-item__top">
+          {% image_background post.data.cover, 'post-item__picture' %}
+          <div class="post-item__meta">
+            <span class="post-type post-type_route">Маршрут</span>
+            <div class="post-item__additional">
+              {% if post.data.isoneday == true %}
+                <span class="post-additional">Однодневный маршрут</span>
+              {% else %}
+                <span class="post-additional">Многодневный маршрут</span>
+              {% endif %}
+            </div>
           </div>
         </div>
-      </div>
-      <div class="post-item__title">
-        {{ post.data.title }}
-      </div>
-  </a>
-  </li>
+        <div class="post-item__title">
+          {{ post.data.title }}
+        </div>
+      </a>
+    </li>
   {% endfor %}
 </ol>

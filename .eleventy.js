@@ -60,6 +60,29 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
+  config.addCollection('index', (api) => {
+    const markPost = (type) => (post) => {
+      post.data.type = type
+      return post
+    }
+    const count = 2
+
+    const travels = [...api.getFilteredByTag('travel')]
+      .reverse()
+      .slice(0, count)
+      .map(markPost('travel'))
+    const routes = [...api.getFilteredByTag('route')]
+      .reverse()
+      .slice(0, count)
+      .map(markPost('route'))
+    const articles = [...api.getFilteredByTag('helpful')]
+      .map(markPost('helpful'))
+      .reverse()
+      .slice(0, count)
+
+    return [...travels, ...routes, ...articles]
+  })
+
   config.addFilter('monthAndYear', (value) => {
     const date = format(value || new Date(), 'LLLL yyyy', {
       locale: ru,
