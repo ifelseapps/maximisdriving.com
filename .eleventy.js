@@ -13,6 +13,13 @@ const ru = require('date-fns/locale/ru')
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
 
+const shuffle = (arr) => {
+  return arr
+    .map((a) => ({ sort: Math.random(), value: a }))
+    .sort((a, b) => a.sort - b.sort)
+    .map((a) => a.value)
+}
+
 /** @param {import("@11ty/eleventy").UserConfig} config */
 module.exports = (config) => {
   const data = {
@@ -80,7 +87,7 @@ module.exports = (config) => {
       .reverse()
       .slice(0, count)
 
-    return [...travels, ...routes, ...articles]
+    return shuffle([...travels, ...routes, ...articles])
   })
 
   config.addFilter('monthAndYear', (value) => {
