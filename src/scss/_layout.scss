@@ -93,6 +93,13 @@
   padding: 1em 0;
 }
 
+.notes-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 3em;
+}
+
 .error-page {
   display: flex;
   flex-direction: column;
