@@ -34,13 +34,16 @@
 }
 
 .main-socials-section {
+  padding: 2em;
   text-align: center;
+  border: solid 2px #ffff00;
+  border-radius: 5px;
 }
 
 .socials {
   display: inline-flex;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
 }
 
 .socials__icon {
