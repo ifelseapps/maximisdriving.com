@@ -1,0 +1,24 @@
+---
+title: Страница не найдена
+layout: layouts/error.njk
+---
+
+<div class="error-404">
+  <div class="error-404__picture">
+    {% image 'src/assets/images/404.jpg', '' %}
+  </div>
+  <div>
+    <h1 class="h h_lvl_1 error-404__title">Страница не найдена</h1>
+    <div>Такой страницы у нас нет, но есть много других:</div>
+  </div>
+  <nav class="menu">
+    <a href="/travels/">Поездки</a>
+    <a href="/routes/">Маршруты</a>
+    <a href="/team/">Команда</a>
+    <a href="/helpful/">Полезное</a>
+    <a href="/join/">Поехать с нами</a>
+  </nav>
+  <div class="error-404__go-to-main">
+    <a class="button" href="/">Вернуться на главную</a>
+  </div>
+</div>
