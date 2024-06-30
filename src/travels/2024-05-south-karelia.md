@@ -12,6 +12,8 @@ cover: https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/k
   {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-2.jpg', 'Снег в Вологодской области' %}
 {% endfigure %}
 
+## Ладожские шхеры
+
 Первой нашей остановкой был город _Лахденпохья_, который находится не&nbsp;далеко от&nbsp;_Сортавалы_. Я&nbsp;заказал у&nbsp;[этих ребят](https://vk.com/ladoga20) экскурсию по&nbsp;Ладожским шхерам на&nbsp;катере. Нам очень понравилось! Рекомендую!
 
 Нас прокатили на&nbsp;катере по&nbsp;Ладожскому озеру, рассказали несколько интересных фактов. Например, я&nbsp;и&nbsp;не&nbsp;знал, что глубина Ладожского озера местами достигает почти 300&nbsp;метров. И&nbsp;в&nbsp;советское время в&nbsp;Лахденпохье был морской причал, к&nbsp;которому подходили подводные лодки.
@@ -27,6 +29,8 @@ cover: https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/k
 {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-5.jpg', '' %}
 
 {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-6.jpg', '' %}
+
+## Сортавала
 
 Из&nbsp;Лахденпохьи мы&nbsp;отправились к&nbsp;месту нашей ночевки&nbsp;&mdash; в&nbsp;Сортавалу. Ехать не&nbsp;далеко, около 40&nbsp;минут.
 
@@ -62,6 +66,8 @@ cover: https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/k
 
 Рядом с&nbsp;парком есть кафе-столовая. Там дешево, но&nbsp;не&nbsp;вкусно. Не&nbsp;советую там есть.
 
+## Горный парк &laquo;Рускеала&raquo;
+
 После обеда мы&nbsp;поехали в&nbsp;[горный парк &laquo;Рускеала&raquo;](https://ruskeala.ru). По&nbsp;дороге заехали на&nbsp;Рускеальские водопады.
 
 {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-16.jpg', '' %}
@@ -80,6 +86,8 @@ cover: https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/k
 
 {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-23.jpg', '' %}
 
+## Водопад &laquo;Кивач&raquo;
+
 На&nbsp;следующий день рано утром мы&nbsp;выдвинулись в&nbsp;сторону Петрозаводска, на&nbsp;водопад &laquo;Кивач&raquo;.
 
 Я&nbsp;предварительно заказал нам экскурсию. Девушка Даша очень интересно рассказала нам о&nbsp;природе Карелии, т.к. Кивач&nbsp;&mdash; это не&nbsp;только водопад. Это целый парк.
@@ -89,6 +97,8 @@ cover: https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/k
 {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-25.jpg', '' %}
 
 {% image 'https://storage.yandexcloud.net/maximisdriving.com/travels/karelia-2024/karelia-2024-26.jpg', '' %}
+
+## Онежские петроглифы
 
 Обратный путь мы&nbsp;проложили по&nbsp;северной стороне Онежского озера, через Медвежьегорск. На&nbsp;обратном пути остановились не&nbsp;далеко от&nbsp;г. Пудож в&nbsp;п. Шальский (примерно 30&nbsp;км от&nbsp;трассы). Я&nbsp;предварительно договорился об&nbsp;экскурсии на&nbsp;катере к&nbsp;Онежским петроглифам (это такие древние наскальные изображения).
 
