@@ -1,3 +1,4 @@
 {
-  "tags": ["travel"]
+  "tags": ["travel"],
+  "layout": "layouts/travel.njk"
 }

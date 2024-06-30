@@ -136,7 +136,9 @@ ul:not([class]) li::marker {
 
 ul li:not(:last-child),
 ol li:not(:last-child) {
-  margin-bottom: 0.8em;
+  &:not([class]) {
+    margin-bottom: 0.8em;
+  }
 }
 
 ul ul {

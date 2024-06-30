@@ -1,3 +1,4 @@
 {
-  "tags": ["helpful"]
+  "tags": ["helpful"],
+  "layout": "layouts/helpful.njk"
 }

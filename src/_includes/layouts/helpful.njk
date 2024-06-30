@@ -1,0 +1,21 @@
+{% extends "layouts/default.njk" %}
+
+{% block content %}
+<div class="page__breadcrumbs">
+  <ul class="breadcrumbs">
+    <li class="breadcrumbs__item">
+      <a href="/">Главная страница</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="/helpful/">Полезное</a>
+    </li>
+    <li class="breadcrumbs__item">
+      {{ title }}
+    </li>
+  </ul>
+</div>
+<h1 class="h h_lvl_1">{{ title }}</h1>
+
+{{ content | safe }}
+
+{% endblock content %}
