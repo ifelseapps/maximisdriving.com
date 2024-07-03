@@ -61,6 +61,20 @@
           </div>
         </header>
         <main class="container page__content">
+          {% if page.url !== '/' %}
+            {% block breadcrumbs %}
+              <div class="page__breadcrumbs">
+                <ul class="breadcrumbs">
+                  <li class="breadcrumbs__item">
+                    <a class="breadcrumbs__link" href="/">Главная страница</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    {{ title }}
+                  </li>
+                </ul>
+              </div>
+            {% endblock breadcrumbs %}
+          {% endif %}
           {% block content %}
             {% if page.url !== '/' %}
               <h1>{{ title }}</h1>

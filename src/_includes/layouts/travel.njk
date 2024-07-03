@@ -1,6 +1,6 @@
 {% extends "layouts/default.njk" %}
 
-{% block content %}
+{% block breadcrumbs %}
 <div class="page__breadcrumbs">
   <ul class="breadcrumbs">
     <li class="breadcrumbs__item">
@@ -14,6 +14,9 @@
     </li>
   </ul>
 </div>
+{% endblock breadcrumbs %}
+
+{% block content %}
 <div>{{ date | monthAndYear }} г.</div>
 <h1 class="h h_lvl_1">{{ title }}</h1>
 
