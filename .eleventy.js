@@ -13,10 +13,19 @@ const ru = require('date-fns/locale/ru')
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
 
+const random = (min, max) => {
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
 const shuffle = (arr) => {
   return arr
-    .map((a) => ({ sort: Math.random(), value: a }))
-    .sort((a, b) => a.sort - b.sort)
+    .map((a) => ({
+      sort: random(1, 10),
+      value: a,
+    }))
+    .sort((a, b) => b.sort - a.sort)
     .map((a) => a.value)
 }
 
