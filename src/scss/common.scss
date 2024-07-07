@@ -145,13 +145,6 @@ ul ul {
   list-style-type: disc;
 }
 
-.image,
-.page__content img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 .eleventy-plugin-youtube-embed {
   margin: 1em 0;
 }
@@ -248,7 +241,7 @@ p:empty {
   margin-bottom: 0.2em;
   font-weight: 700;
   @include media(md) {
-    width: 300px;
+    width: 180px;
     flex: none;
     margin-bottom: 0;
   }
@@ -338,6 +331,13 @@ p:empty {
 
 .text-done {
   color: #00c853;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
 }
 
 .image-background {

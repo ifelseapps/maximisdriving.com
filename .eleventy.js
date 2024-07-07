@@ -183,6 +183,7 @@ module.exports = (config) => {
       })
 
       const imageAttributes = {
+        class: 'image',
         alt,
         sizes,
         loading: 'lazy',
