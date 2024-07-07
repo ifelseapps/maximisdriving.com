@@ -7,11 +7,22 @@
 }
 
 .page__content {
+  position: relative;
+  display: flex;
   margin: 2.8em 0;
 }
 
 .page__breadcrumbs {
   margin-bottom: 1em;
+}
+
+.page__side {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 400px;
+  background-color: yellow;
+  color: #424242;
 }
 
 .page__footer {
