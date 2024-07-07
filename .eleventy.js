@@ -76,6 +76,21 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
+  config.addCollection('travel', (api) => {
+    const posts = api.getFilteredByTag('travel') || []
+    const patchRelated = (post) => {
+      post.data.related = posts.filter(
+        (p) =>
+          p.url !== post.url &&
+          post.data.group &&
+          p.data.group === post.data.group,
+      )
+      return post
+    }
+
+    return posts.map(patchRelated)
+  })
+
   config.addCollection('index', (api) => {
     const markPost = (type) => (post) => {
       post.data.type = type
