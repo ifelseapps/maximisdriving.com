@@ -176,7 +176,7 @@ module.exports = (config) => {
     'image',
     async (src, alt, sizes = '(min-width: 30em) 50vw, 100vw') => {
       const metadata = await Image(src, {
-        widths: [320, 640, 960, 1200, 1800],
+        widths: [320, 640, 960, 1200],
         formats: ['webp', 'jpeg'],
         urlPath: IMAGES_PATH,
         outputDir: IMAGES_OUTPUT_PATH,
