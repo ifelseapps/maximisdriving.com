@@ -271,7 +271,6 @@ p:empty {
     position: relative;
     padding-left: 0.1em;
     flex: auto;
-    white-space: nowrap;
     &::after {
       content: '';
       position: absolute;
