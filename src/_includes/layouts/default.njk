@@ -61,11 +61,11 @@
           </div>
         </header>
         <div class="page__content">
-          <aside class="page__side">
-            {% block aside %}
-            {% endblock aside %}
-          </aside>
-          <main class="container">
+          <div class="page__side">
+            {% block aside_left %}
+            {% endblock aside_left %}
+          </div>
+          <main class="container page__main">
             {% if page.url !== '/' %}
               {% block breadcrumbs %}
                 <div class="page__breadcrumbs">
@@ -87,6 +87,10 @@
               {{ content | safe }}
             {% endblock content %}
           </main>
+          <div class="page__side">
+            {% block aside_right %}
+            {% endblock aside_right %}
+          </div>
         </div>
       </div>
       <footer class="footer container page__footer">

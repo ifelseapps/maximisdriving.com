@@ -13,6 +13,8 @@ const ru = require('date-fns/locale/ru')
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
 
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
+
 const random = (min, max) => {
   min = Math.ceil(min)
   max = Math.floor(max)
@@ -119,7 +121,7 @@ module.exports = (config) => {
       locale: ru,
     })
 
-    return date.charAt(0).toUpperCase() + date.slice(1)
+    return `${capitalize(date)} г.`
   })
 
   config.addFilter('date', (value) => {
