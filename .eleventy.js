@@ -12,6 +12,9 @@ const ru = require('date-fns/locale/ru')
 
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
+const COLLECTION_RANDOM_SIZE = 5
+
+const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 
 const random = (min, max) => {
   min = Math.ceil(min)
@@ -22,7 +25,7 @@ const random = (min, max) => {
 const shuffle = (arr) => {
   return arr
     .map((a) => ({
-      sort: random(1, 10),
+      sort: random(1, arr.length),
       value: a,
     }))
     .sort((a, b) => b.sort - a.sort)
@@ -114,12 +117,33 @@ module.exports = (config) => {
     return shuffle([...travels, ...routes, ...articles])
   })
 
+  config.addCollection('travels_random', (api) => {
+    return shuffle(api.getFilteredByTag('travel')).slice(
+      0,
+      COLLECTION_RANDOM_SIZE + 1,
+    )
+  })
+
+  config.addCollection('routes_random', (api) => {
+    return shuffle(api.getFilteredByTag('route')).slice(
+      0,
+      COLLECTION_RANDOM_SIZE + 1,
+    )
+  })
+
+  config.addCollection('routes_oneday', (api) => {
+    return api
+      .getFilteredByTag('route')
+      .filter((r) => r.data.days === 1)
+      .reverse()
+  })
+
   config.addFilter('monthAndYear', (value) => {
     const date = format(value || new Date(), 'LLLL yyyy', {
       locale: ru,
     })
 
-    return date.charAt(0).toUpperCase() + date.slice(1)
+    return `${capitalize(date)} г.`
   })
 
   config.addFilter('date', (value) => {

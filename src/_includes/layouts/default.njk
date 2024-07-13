@@ -60,28 +60,38 @@
             {% endif %}
           </div>
         </header>
-        <main class="container page__content">
-          {% if page.url !== '/' %}
-            {% block breadcrumbs %}
-              <div class="page__breadcrumbs">
-                <ul class="breadcrumbs">
-                  <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link" href="/">Главная страница</a>
-                  </li>
-                  <li class="breadcrumbs__item">
-                    {{ title }}
-                  </li>
-                </ul>
-              </div>
-            {% endblock breadcrumbs %}
-          {% endif %}
-          {% block content %}
+        <div class="page__content">
+          <div class="page__side">
+            {% block aside_left %}
+            {% endblock aside_left %}
+          </div>
+          <main class="container page__main">
             {% if page.url !== '/' %}
-              <h1>{{ title }}</h1>
+              {% block breadcrumbs %}
+                <div class="page__breadcrumbs">
+                  <ul class="breadcrumbs">
+                    <li class="breadcrumbs__item">
+                      <a class="breadcrumbs__link" href="/">Главная страница</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                      {{ title }}
+                    </li>
+                  </ul>
+                </div>
+              {% endblock breadcrumbs %}
             {% endif %}
-            {{ content | safe }}
-          {% endblock content %}
-        </main>
+            {% block content %}
+              {% if page.url !== '/' %}
+                <h1>{{ title }}</h1>
+              {% endif %}
+              {{ content | safe }}
+            {% endblock content %}
+          </main>
+          <div class="page__side">
+            {% block aside_right %}
+            {% endblock aside_right %}
+          </div>
+        </div>
       </div>
       <footer class="footer container page__footer">
         <div class="footer__inner">

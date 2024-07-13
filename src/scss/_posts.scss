@@ -122,3 +122,21 @@
 .post__related {
   margin-top: 5em;
 }
+
+.post__date {
+  margin-bottom: 0.6em;
+  font-size: 0.9rem;
+}
+
+.date {
+  display: inline-flex;
+  padding: 0.3em 0.4em;
+  line-height: 1em;
+  border-radius: 5px;
+  background-color: #ffeb3b;
+  color: #424242;
+}
+
+.date_future {
+  background-color: #76ff03;
+}

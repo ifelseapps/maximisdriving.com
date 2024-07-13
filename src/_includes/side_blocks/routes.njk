@@ -1,0 +1,16 @@
+<section class="side-block side-block-wrapper__item">
+  <div class="side-block__main">
+    <h3 class="side-block__title">Популярные маршруты</h3>
+    <ol class="side-list">
+      {% for post in collections.routes_random %}
+        {% if post.url !== page.url %}
+          <li class="side-list-item side-list__item">
+            <a href="{{ post.url  | url}}">
+              {{ post.data.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+  </div>
+</section>
