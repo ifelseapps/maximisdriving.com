@@ -4,7 +4,6 @@ route: Ярославль — Вытегра — Ярославль
 distance: 1 040 км
 days: 1
 fuel: 4 900 руб
-isoneday: true
 cover: https://storage.yandexcloud.net/maximisdriving.com/routes/routes_vytegra.png
 ---
 

@@ -131,6 +131,13 @@ module.exports = (config) => {
     )
   })
 
+  config.addCollection('routes_oneday', (api) => {
+    return api
+      .getFilteredByTag('route')
+      .filter((r) => r.data.days === 1)
+      .reverse()
+  })
+
   config.addFilter('monthAndYear', (value) => {
     const date = format(value || new Date(), 'LLLL yyyy', {
       locale: ru,

@@ -1,0 +1,17 @@
+{% extends "layouts/default.njk" %}
+
+{% block aside_left %}
+<div class="side-block-wrapper side-block-wrapper_scrollable">
+  <div class="side-block-wrapper__inner">
+    {% include 'side_blocks/future_travels.njk' %}
+  </div>
+</div>
+{% endblock aside_left %}
+
+{% block aside_right %}
+<div class="side-block-wrapper side-block-wrapper_scrollable">
+  <div class="side-block-wrapper__inner">
+    {% include 'side_blocks/socials.njk' %}
+  </div>
+</div>
+{% endblock aside_right %}
