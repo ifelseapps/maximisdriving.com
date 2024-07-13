@@ -24,7 +24,7 @@ const random = (min, max) => {
 const shuffle = (arr) => {
   return arr
     .map((a) => ({
-      sort: random(1, 10),
+      sort: random(1, arr.length),
       value: a,
     }))
     .sort((a, b) => b.sort - a.sort)
@@ -114,6 +114,10 @@ module.exports = (config) => {
       .slice(0, count)
 
     return shuffle([...travels, ...routes, ...articles])
+  })
+
+  config.addCollection('travels_random', (api) => {
+    return shuffle(api.getFilteredByTag('travel')).slice(0, 6)
   })
 
   config.addFilter('monthAndYear', (value) => {

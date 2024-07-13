@@ -7,7 +7,7 @@
       <div class="side-block__main">
         <h3 class="side-block__title">Поездки</h3>
         <ol class="side-list">
-          {% for post in collections.travel | reverse %}
+          {% for post in collections.travels_random %}
             {% if post.url !== page.url %}
               <li class="side-list-item side-list__item">
                 <div class="date side-list-item__date">{{ post.data.date | monthAndYear }}</div>
