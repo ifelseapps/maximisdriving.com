@@ -1,5 +1,6 @@
 ---
 title: Авторские права
+layout: layouts/official.njk
 ---
 
 Источники изображений:

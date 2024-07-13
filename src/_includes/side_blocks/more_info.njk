@@ -1,0 +1,15 @@
+<section class="side-block side-block-wrapper__item">
+  <div class="side-block__main">
+    <h3 class="side-block__title">Что еще посмотреть?</h3>
+    <ol class="side-list">
+      {% if route_link %}
+        <li class="side-list-item side-list__item">
+          <a href="{{ route_link }}">Маршрут поездки</a>
+        </li>
+      {% endif %}
+      <li class="side-list-item side-list__item">
+        <a href="/oneday/">Идеи для однодневных поездок из Ярославля</a>
+      </li>
+    </ol>
+  </div>
+</section>

@@ -12,6 +12,7 @@ const ru = require('date-fns/locale/ru')
 
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
+const COLLECTION_RANDOM_SIZE = 5
 
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 
@@ -117,7 +118,17 @@ module.exports = (config) => {
   })
 
   config.addCollection('travels_random', (api) => {
-    return shuffle(api.getFilteredByTag('travel')).slice(0, 6)
+    return shuffle(api.getFilteredByTag('travel')).slice(
+      0,
+      COLLECTION_RANDOM_SIZE + 1,
+    )
+  })
+
+  config.addCollection('routes_random', (api) => {
+    return shuffle(api.getFilteredByTag('route')).slice(
+      0,
+      COLLECTION_RANDOM_SIZE + 1,
+    )
   })
 
   config.addFilter('monthAndYear', (value) => {

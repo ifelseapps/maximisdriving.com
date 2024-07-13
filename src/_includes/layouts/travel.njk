@@ -3,47 +3,8 @@
 {% block aside_left %}
 <div class="side-block-wrapper side-block-wrapper_scrollable">
   <div class="side-block-wrapper__inner">
-    <section class="side-block side-block-wrapper__item">
-      <div class="side-block__main">
-        <h3 class="side-block__title">Поездки</h3>
-        <ol class="side-list">
-          {% for post in collections.travels_random %}
-            {% if post.url !== page.url %}
-              <li class="side-list-item side-list__item">
-                <div class="date side-list-item__date">{{ post.data.date | monthAndYear }}</div>
-                <a href="{{ post.url  | url}}">
-                  {{ post.data.title }}
-                </a>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ol>
-      </div>
-    </section>
-    <section class="side-block side-block-wrapper__item">
-      <div class="side-block__main">
-        <h3 class="side-block__title">Ближайшие поездки</h3>
-        <ol class="side-list">
-          <li class="side-list-item side-list__item">
-            <div class="date date_future side-list-item__date">
-              20.07.2024 — 03.08.2024
-            </div>
-            <div>
-              Ярославль — Грозный — Избербаш
-            </div>
-          </li>
-          <li class="side-list-item side-list__item">
-            <div class="date date_future side-list-item__date">
-              08.08.2024 — 12.08.2024
-            </div>
-            <div>
-              Ярославль — Кемь — о.Соловетский
-            </div>
-          </li>
-        </ol>
-      </div>
-      <p class="side-block__desc">Хотите поехать с нами? <a href="/join/">Присоединяйтесь!</a></p>
-    </section>
+    {% include 'side_blocks/travels.njk' %}
+    {% include 'side_blocks/future_travels.njk' %}
   </div>
 </div>
 {% endblock aside_left %}
@@ -51,26 +12,8 @@
 {% block aside_right %}
 <div class="side-block-wrapper side-block-wrapper_scrollable">
   <div class="side-block-wrapper__inner">
-      <div class="side-block side-block-wrapper__item">
-        <div class="side-block__main">
-          <h3 class="side-block__title">Что еще посмотреть?</h3>
-          <ol class="side-list">
-            {% if route_link %}
-              <li class="side-list-item side-list__item">
-                <a href="{{ route_link }}">Маршрут поездки</a>
-              </li>
-            {% endif %}
-            <li class="side-list-item side-list__item">
-              <a href="/oneday/">Идеи для однодневных поездок из Ярославля</a>
-            </li>
-          </ol>
-        </div>
-      </div>
-    <div class="side-block side-block-wrapper__item">
-      <div class="side-block__desc">
-        {% include 'socials.njk' %}
-      </div>
-    </div>
+    {% include 'side_blocks/more_info.njk' %}
+    {% include 'side_blocks/socials.njk' %}
   </div>
 </div>
 {% endblock aside_right %}
