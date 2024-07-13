@@ -226,7 +226,8 @@ $contentVerticalMargin: 2.8em;
 }
 
 .error-404__picture {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .error-404__picture img {
