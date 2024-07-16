@@ -123,10 +123,10 @@ module.exports = (config) => {
       banners.forEach((b) => {
         current += page.step
 
-        let $paragraph = $(`.post p:nth-of-type(${current})`)
+        let $paragraph = $(`.post p:not([class]):nth-of-type(${current})`)
 
         if (!$paragraph.length) {
-          $paragraph = $('.post p:last-of-type')
+          $paragraph = $('.post p:not([class]):last-of-type')
         }
 
         const template = `{% include '${join(template_dir, `${b}.njk`)}' %}`
