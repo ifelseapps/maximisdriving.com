@@ -42,7 +42,7 @@ $contentVerticalMargin: 2.8em;
     justify-content: center;
     align-items: flex-start;
     flex: none;
-    width: calc((100% - $containerMaxWidth) / 2);
+    width: calc((100% - $containerMaxWidth - 2em) / 2);
   }
 }
 
