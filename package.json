@@ -14,6 +14,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^3.1.8",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "cheerio": "^1.0.0-rc.12",
     "date-fns": "^2.30.0",
     "eleventy-plugin-embed-everything": "^1.17.0",
     "eleventy-sass": "^2.2.3",

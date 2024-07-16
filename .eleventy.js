@@ -1,3 +1,4 @@
+const { join } = require('path')
 const sass = require('eleventy-sass')
 const markdownIt = require('markdown-it')
 const markdownItAnchor = require('markdown-it-anchor')
@@ -9,10 +10,31 @@ const pluginRss = require('@11ty/eleventy-plugin-rss')
 const Image = require('@11ty/eleventy-img')
 const { format } = require('date-fns')
 const ru = require('date-fns/locale/ru')
+const cheerio = require('cheerio')
+const nunjucks = require('nunjucks')
 
+const SRC_DIR = 'src'
+const INCLUDES_DIR = '_includes'
 const IMAGES_PATH = '/images/'
 const IMAGES_OUTPUT_PATH = './_site/images/'
 const COLLECTION_RANDOM_SIZE = 5
+
+const CONTENT_BANNERS = [
+  {
+    predicate: (path) =>
+      path.includes('/travels/') && !path.includes('/travels/index.html'),
+    banners: ['oneday', 'future_travels'],
+    step: 7,
+  },
+  {
+    predicate: (path) =>
+      path.includes('/routes/') &&
+      !path.includes('/routes/oneday/') &&
+      !path.includes('/routes/index.html'),
+    banners: ['oneday', 'future_travels'],
+    step: 3,
+  },
+]
 
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1)
 
@@ -78,6 +100,43 @@ module.exports = (config) => {
     })
 
   config.setLibrary('md', md)
+
+  config.addTransform('inject-banners', function (content) {
+    const path = this.outputPath || ''
+
+    if (!path.endsWith('.html')) {
+      return content
+    }
+
+    const $ = cheerio.load(content)
+    const compiler = nunjucks.configure(join(SRC_DIR, INCLUDES_DIR))
+    const template_dir = 'banners'
+
+    CONTENT_BANNERS.forEach((page) => {
+      if (!page.predicate(path)) {
+        return
+      }
+
+      const banners = shuffle(page.banners)
+      let current = 0
+
+      banners.forEach((b) => {
+        current += page.step
+
+        let $paragraph = $(`.post p:nth-of-type(${current})`)
+
+        if (!$paragraph.length) {
+          $paragraph = $('.post p:last-of-type')
+        }
+
+        const template = `{% include '${join(template_dir, `${b}.njk`)}' %}`
+
+        $paragraph.after(compiler.renderString(template))
+      })
+    })
+
+    return $.html()
+  })
 
   config.addCollection('travel', (api) => {
     const posts = api.getFilteredByTag('travel') || []
@@ -235,8 +294,8 @@ module.exports = (config) => {
 
   return {
     dir: {
-      input: 'src',
-      includes: '_includes',
+      input: SRC_DIR,
+      includes: INCLUDES_DIR,
     },
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',

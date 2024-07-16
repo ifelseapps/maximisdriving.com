@@ -140,3 +140,50 @@
 .date_future {
   background-color: #76ff03;
 }
+
+.banner-mobile {
+  margin: 2em 0;
+  padding: 1em;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  line-height: 1.3em;
+  @include media(lg) {
+    display: none;
+  }
+}
+
+.banner-mobile_outlined {
+  border: solid 1px #ffeb3b;
+}
+
+.banner-mobile_filled {
+  background: linear-gradient(#fff176, #fdd835);
+}
+
+.banner-mobile__title {
+  margin: 0 0 1em;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.085em;
+}
+
+.banner-mobile__desc {
+  margin-top: 1.2em;
+}
+
+.banner-mobile__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.banner-mobile-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3em;
+}

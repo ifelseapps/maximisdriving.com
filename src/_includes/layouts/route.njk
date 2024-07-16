@@ -35,40 +35,41 @@
 {% endblock breadcrumbs %}
 
 {% block content %}
-<h1 class="h h_lvl_1">{{ title }}</h1>
-<div class="properties">
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Маршрут</div>
+<div class="post">
+  <h1 class="h h_lvl_1">{{ title }}</h1>
+  <div class="properties">
+    <div class="properties__property">
+      <div class="properties__title">
+        <div class="properties__title-wrapper">Маршрут</div>
+      </div>
+      <div class="properties__value">{{ route }}</div>
     </div>
-    <div class="properties__value">{{ route }}</div>
+    <div class="properties__property">
+      <div class="properties__title">
+        <div class="properties__title-wrapper">Расстояние</div>
+      </div>
+      <div class="properties__value">{{ distance }}</div>
+    </div>
+    <div class="properties__property">
+      <div class="properties__title">
+        <div class="properties__title-wrapper">Дней в пути</div>
+      </div>
+      <div class="properties__value">{{ days }}</div>
+    </div>
+    <div class="properties__property">
+      <div class="properties__title">
+        <div class="properties__title-wrapper">Стоимость топлива<span class="properties__mark">*</span></div>
+      </div>
+      <div class="properties__value">{{ fuel }}</div>
+    </div>
   </div>
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Расстояние</div>
+
+  {{ content | safe }}
+
+  <div class="notes-block">
+    <div class="note">
+      * Я привел стоимость топлива с учетом того, что моя машина потребляет примерно 8.3 литра на 100 км (с багажом и тремя людьми на борту).
     </div>
-    <div class="properties__value">{{ distance }}</div>
-  </div>
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Дней в пути</div>
-    </div>
-    <div class="properties__value">{{ days }}</div>
-  </div>
-  <div class="properties__property">
-    <div class="properties__title">
-      <div class="properties__title-wrapper">Стоимость топлива<span class="properties__mark">*</span></div>
-    </div>
-    <div class="properties__value">{{ fuel }}</div>
   </div>
 </div>
-
-{{ content | safe }}
-
-<div class="notes-block">
-  <div class="note">
-    * Я привел стоимость топлива с учетом того, что моя машина потребляет примерно 8.3 литра на 100 км (с багажом и тремя людьми на борту).
-  </div>
-</div>
-
 {% endblock content %}
