@@ -20,22 +20,18 @@ layout: layouts/join.njk
     <th>Даты</th>
   </thead>
   <tbody>
-    <tr>
-      <td>
-        <p>Ярославль — Грозный (экскурсия по горам Чечни и Дагестана) — Избербаш</p>
-        <p><a href="/routes/chechnya-dagestan/">Подробнее о маршруте</a></p>
-      </td>
-      <td>
-        <p>20.07.2024 — 03.08.2024</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Ярославль — Кемь (Рабочеостровск) — Соловецкие острова</p>
-      </td>
-      <td>
-        <p>08.08.2024 — 12.08.2024</p>
-      </td>
-    </tr>
+    {% for item in future_travels %}
+      <tr>
+        <td>
+          <p>{{ item.route }}</p>
+          {% if item.route_link %}
+            <p><a href="{{ item.route_link }}">Подробнее о маршруте</a></p>
+          {% endif %}
+        </td>
+        <td>
+          <p>{{ item.dates }}</p>
+        </td>
+      </tr>
+    {% endfor %}
   </tbody>
 </table>
