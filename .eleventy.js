@@ -12,6 +12,7 @@ const { format } = require('date-fns')
 const ru = require('date-fns/locale/ru')
 const cheerio = require('cheerio')
 const nunjucks = require('nunjucks')
+const future_travels = require('./src/_data/future_travels.json')
 
 const SRC_DIR = 'src'
 const INCLUDES_DIR = '_includes'
@@ -131,7 +132,7 @@ module.exports = (config) => {
 
         const template = `{% include '${join(template_dir, `${b}.njk`)}' %}`
 
-        $paragraph.after(compiler.renderString(template))
+        $paragraph.after(compiler.renderString(template, { future_travels }))
       })
     })
 
