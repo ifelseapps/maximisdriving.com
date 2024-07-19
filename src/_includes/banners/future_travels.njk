@@ -1,14 +1,12 @@
 <div class="banner-mobile banner-mobile_outlined">
   <h3 class="banner-mobile__title">Ближайшие поездки</h3>
   <ul class="banner-mobile__list">
-    <li class="banner-mobile-item">
-      <div class="date date_future">20.07.2024 — 03.08.2024</div>
-      Ярославль — Грозный — Избербаш
-    </li>
-    <li class="banner-mobile-item">
-      <div class="date date_future">08.08.2024 — 12.08.2024</div>
-      Ярославль — Кемь — о.Соловецкий
-    </li>
+    {% for item in future_travels %}
+      <li class="banner-mobile-item">
+        <div class="date date_future">{{ item.dates }}</div>
+        {{ item.route }}
+      </li>
+    {% endfor %}
   </ul>
   <p class="banner-mobile__desc">
     Хотите поехать с нами? <a href="/join/">Присоединяйтесь!</a>
