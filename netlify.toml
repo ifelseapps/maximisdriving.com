@@ -1,7 +1,7 @@
 [[redirects]]
-  from = "/"
-  to = "https://maximpavlov.su"
+  from = "*"
+  to = "https://maximpavlov.su/tags/максимрулит/"
 
 [[redirects]]
   from = "/*"
-  to = "https://maximpavlov.su"
+  to = "https://maximpavlov.su/tags/максимрулит/"
