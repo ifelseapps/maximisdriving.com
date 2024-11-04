@@ -12,7 +12,6 @@ const { format } = require('date-fns')
 const ru = require('date-fns/locale/ru')
 const cheerio = require('cheerio')
 const nunjucks = require('nunjucks')
-const future_travels = require('./src/_data/future_travels.json')
 
 const SRC_DIR = 'src'
 const INCLUDES_DIR = '_includes'
@@ -102,42 +101,42 @@ module.exports = (config) => {
 
   config.setLibrary('md', md)
 
-  config.addTransform('inject-banners', function (content) {
-    const path = this.outputPath || ''
+  // config.addTransform('inject-banners', function (content) {
+  //   const path = this.outputPath || ''
 
-    if (!path.endsWith('.html')) {
-      return content
-    }
+  //   if (!path.endsWith('.html')) {
+  //     return content
+  //   }
 
-    const $ = cheerio.load(content)
-    const compiler = nunjucks.configure(join(SRC_DIR, INCLUDES_DIR))
-    const template_dir = 'banners'
+  //   const $ = cheerio.load(content)
+  //   const compiler = nunjucks.configure(join(SRC_DIR, INCLUDES_DIR))
+  //   const template_dir = 'banners'
 
-    CONTENT_BANNERS.forEach((page) => {
-      if (!page.predicate(path)) {
-        return
-      }
+  //   CONTENT_BANNERS.forEach((page) => {
+  //     if (!page.predicate(path)) {
+  //       return
+  //     }
 
-      const banners = shuffle(page.banners)
-      let current = 0
+  //     const banners = shuffle(page.banners)
+  //     let current = 0
 
-      banners.forEach((b) => {
-        current += page.step
+  //     banners.forEach((b) => {
+  //       current += page.step
 
-        let $paragraph = $(`.post p:not([class]):nth-of-type(${current})`)
+  //       let $paragraph = $(`.post p:not([class]):nth-of-type(${current})`)
 
-        if (!$paragraph.length) {
-          $paragraph = $('.post p:not([class]):last-of-type')
-        }
+  //       if (!$paragraph.length) {
+  //         $paragraph = $('.post p:not([class]):last-of-type')
+  //       }
 
-        const template = `{% include '${join(template_dir, `${b}.njk`)}' %}`
+  //       const template = `{% include '${join(template_dir, `${b}.njk`)}' %}`
 
-        $paragraph.after(compiler.renderString(template, { future_travels }))
-      })
-    })
+  //       $paragraph.after(compiler.renderString(template, { future_travels }))
+  //     })
+  //   })
 
-    return $.html()
-  })
+  //   return $.html()
+  // })
 
   config.addCollection('travel', (api) => {
     const posts = api.getFilteredByTag('travel') || []
