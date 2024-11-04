@@ -1,3 +1,7 @@
 [[redirects]]
+  from = "/"
+  to = "https://maximpavlov.su"
+
+[[redirects]]
   from = "/*"
   to = "https://maximpavlov.su"
